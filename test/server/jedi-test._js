@@ -1,7 +1,7 @@
 "use strict";
 QUnit.module(module.id);
 var ez = require("ez-streams");
-var jedi = require("ez-jedi");
+var jedi = require("../..");
 
 function transform(_,source,prototype,chunkSize) {
 	console.log(JSON.stringify(source));
