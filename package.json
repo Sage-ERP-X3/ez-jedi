@@ -1,7 +1,7 @@
 {
   "name": "ez-jedi",
   "description": "metadata driven transforms for ez-streams",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "author": {
     "name": "Eric Boyard"
@@ -22,9 +22,9 @@
     "ez-streams": "^1.2.1"
   },
   "devDependencies": {
-    "babel-core": "^5.8.25",
-    "babel-plugin-streamline": "^1.0.8",
-    "qunit": "^0.7.7"
+    "babel-plugin-streamline": "^2.0.0",
+    "babel-preset-es2015": "^6.3.13",
+    "streamline-helpers": "^2.0.0"
   },
   "scripts": {
     "prepublish": "node build.js || nodejs build.js",
