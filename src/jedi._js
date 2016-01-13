@@ -605,7 +605,7 @@ function parseStructure(_,_structure,_reader,_item) {
   // chunkLength is set by parsers !
   _item.chunkLength  = 0;
   while((item = _structure.$parser(_,_item)) != null) { 
-    if(!item.data) {
+    if(!item.data || !Object.keys(item.data).length) {
       //dbg:tracer && tracer.log("!item.data =>_reader.read"); 
       chunk =  _reader.read(_);
       if(chunk){
