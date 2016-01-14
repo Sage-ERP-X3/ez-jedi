@@ -3,7 +3,7 @@
   JEDI V 0.02
 */
 var path    = require("path");
-var tracer  = null;
+var tracer  = null;//console.log;
 
 function stringParser(_type) {
   /*dbg*/tracer && tracer.log("new stringParser "); 
@@ -151,7 +151,7 @@ function variantParser(_variant) {
   if(_variant.$select){
     var regex = new RegExp(_variant.$select);
     return function(_,_item) {
-       _item.data = {};
+       _item.data = null;
  
       var chunk;
       var variant="default";
@@ -174,6 +174,7 @@ function variantParser(_variant) {
         _variant.$variants[variant].$parser =  _variant.$variants[variant].$parser || new typeParser(_variant.$root,_variant.$variants[variant]);
          /*dbg*/tracer && tracer.log("parse variant:"+variant);
         var varItem = _variant.$variants[variant].$parser(_,item);
+        _item.data = {};
         _item.data[variant] = varItem.data;
         
         if(varItem.setData) {
@@ -195,7 +196,7 @@ function variantParser(_variant) {
        
       //dbg:tracer && tracer.log("variant buffer:"+_item.buffer.substring(0,20)+"...");
       var varItem;
-      _item.data = {};
+      _item.data = null;
       for(var variant in _variant.$variants) {
         /*dbg*/tracer && tracer.log("variant:",variant);
         var item = subItem(_item);
@@ -204,6 +205,7 @@ function variantParser(_variant) {
          //dbg:varItem && tracer && tracer.log("variant.0.chunkLength:"+varItem.chunkLength);
          
         if(varItem && varItem.data !== null) {
+          _item.data = {};
           _item.data[variant] = varItem.data;
           if(varItem.setData) {
             _item.setData = setDataVariant(variant);
@@ -605,7 +607,7 @@ function parseStructure(_,_structure,_reader,_item) {
   // chunkLength is set by parsers !
   _item.chunkLength  = 0;
   while((item = _structure.$parser(_,_item)) != null) { 
-    if(!item.data || !Object.keys(item.data).length) {
+    if(!item.data) {
       //dbg:tracer && tracer.log("!item.data =>_reader.read"); 
       chunk =  _reader.read(_);
       if(chunk){
