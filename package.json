@@ -1,7 +1,7 @@
 {
   "name": "ez-jedi",
   "description": "metadata driven transforms for ez-streams",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
   "author": {
     "name": "Eric Boyard"
@@ -14,12 +14,12 @@
     "url": "https://github.com/Sage-ERP-X3/ez-jedi/issues"
   },
   "engines": {
-    "node": ">=0.10.8"
+    "node": ">=0.12.0"
   },
   "dependencies": {
     "streamline-helpers": "^2.0.0",
     "streamline-runtime": "^1.0.15",
-    "ez-streams": "^2.0.0"
+    "ez-streams": "^3.0.0"
   },
   "devDependencies": {
     "babel-plugin-streamline": "^2.0.0",
