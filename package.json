@@ -14,12 +14,12 @@
     "url": "https://github.com/Sage-ERP-X3/ez-jedi/issues"
   },
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">=10.0.0"
   },
   "dependencies": {
-    "streamline-helpers": "^2.0.12",
-    "streamline-runtime": "^1.0.15",
-    "ez-streams": "^3.1.1"
+    "streamline-helpers": "^4.0.0",
+    "streamline-runtime": "^2.0.1",
+    "ez-streams": "^4.0.0"
   },
   "devDependencies": {
     "babel-plugin-streamline": "^2.0.0",
