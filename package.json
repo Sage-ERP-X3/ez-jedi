@@ -1,7 +1,7 @@
 {
   "name": "ez-jedi",
   "description": "metadata driven transforms for ez-streams",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "license": "MIT",
   "author": {
     "name": "Eric Boyard"
